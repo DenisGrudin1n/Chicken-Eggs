@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class GradientProgressBar extends StatelessWidget {
-  final double progress; 
+  final double progress;
 
   const GradientProgressBar({super.key, required this.progress});
 
@@ -22,7 +22,10 @@ class GradientProgressBar extends StatelessWidget {
             width: (progress * 1.sw).clamp(0, 1.sw), // progress in pixels
             decoration: BoxDecoration(
               gradient: const LinearGradient(
-                colors: [Color.fromARGB(255, 255, 43, 0), Color.fromARGB(255, 255, 229, 0),],
+                colors: [
+                  Color.fromARGB(255, 255, 43, 0),
+                  Color.fromARGB(255, 255, 229, 0),
+                ],
               ),
               borderRadius: BorderRadius.circular(12.r),
             ),

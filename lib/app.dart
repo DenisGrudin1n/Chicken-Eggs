@@ -17,9 +17,7 @@ class MyApp extends StatelessWidget {
           title: 'Chicken-Eggs Game',
           theme: ThemeData.dark(),
           home: const LoadingScreen(),
-          routes: {
-            '/menu': (context) => const MenuScreen(),
-          },
+          routes: {'/menu': (context) => const MenuScreen()},
         );
       },
     );

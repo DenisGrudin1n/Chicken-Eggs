@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
@@ -8,56 +9,59 @@ class MenuScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        alignment: Alignment.center,
         children: [
-          Positioned.fill(
-            child: Image.asset(
-              'assets/images/background.png',
-              fit: BoxFit.cover,
-            ),
+          Image.asset(
+            'assets/images/background.png',
+            fit: BoxFit.cover,
+            height: 1.sh,
           ),
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  'assets/images/chicken.png',
-                  height: 320.h, 
-                ),
-                SizedBox(height: 50.h),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 60.w, vertical: 20.h),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.r),
-                    ),
-                  ),
-                  child: Text(
-                    "PLAY",
-                    style: TextStyle(
-                      fontSize: 24.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                )
-              ],
+
+          Align(
+            alignment: Alignment.center,
+            child: Padding(
+              padding: EdgeInsets.only(left: 10.w),
+              child: Image.asset('assets/images/chicken.png', height: 0.7.sh),
             ),
           ),
           Positioned(
             top: 40.h,
-            left: 20.w,
-            child: IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.info, size: 36),
-            ),
+            left: 25.w,
+            child: Image.asset('assets/images/info.png', height: 80.h),
           ),
           Positioned(
             top: 40.h,
-            right: 20.w,
-            child: IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.menu, size: 36),
+            right: 25.w,
+            child: Image.asset('assets/images/menu.png', height: 80.h),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 0.1.sh),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Image.asset('assets/images/button.png', height: 140.h),
+                  // Stroke
+                  Text(
+                    'PLAY',
+                    style: GoogleFonts.rubikMonoOne(
+                      fontSize: 54.sp,
+                      foreground: Paint()
+                        ..style = PaintingStyle.stroke
+                        ..strokeWidth = 3
+                        ..color = Color.fromARGB(255, 157, 49, 3),
+                    ),
+                  ),
+                  // Fill
+                  Text(
+                    'PLAY',
+                    style: GoogleFonts.rubikMonoOne(
+                      fontSize: 54.sp,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
