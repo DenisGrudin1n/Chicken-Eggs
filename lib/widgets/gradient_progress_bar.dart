@@ -32,7 +32,7 @@ class GradientProgressBar extends StatelessWidget {
           ),
           Center(
             child: Text(
-              "${(progress * 100).toInt()}%",
+              '${(progress * 100).toInt()}%',
               style: GoogleFonts.rubikMonoOne(
                 fontSize: 24.sp,
                 color: Colors.white,

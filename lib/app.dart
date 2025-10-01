@@ -1,4 +1,5 @@
 import 'package:chicken_eggs/screens/loading_screen.dart';
+import 'package:chicken_eggs/screens/home_screen.dart';
 import 'package:chicken_eggs/screens/menu_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,7 +18,10 @@ class MyApp extends StatelessWidget {
           title: 'Chicken-Eggs Game',
           theme: ThemeData.dark(),
           home: const LoadingScreen(),
-          routes: {'/menu': (context) => const MenuScreen()},
+          routes: {
+            '/home': (context) => const HomeScreen(),
+            '/menu': (context) => const MenuScreen(),
+          },
         );
       },
     );

@@ -23,7 +23,7 @@ class _LoadingScreenState extends State<LoadingScreen>
     )..forward();
 
     Timer(const Duration(seconds: 5), () {
-      Navigator.pushReplacementNamed(context, '/menu');
+      Navigator.pushReplacementNamed(context, '/home');
     });
   }
 
